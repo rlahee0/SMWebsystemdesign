@@ -1,0 +1,221 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: lightsalmon;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+#title {
+    text-align: center;
+}
+
+#navi {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+#navi > li {
+    position: relative;
+    background-color: lightcoral;
+    border: 2px solid #ffffff93; 
+    border-radius: 10px; 
+    margin: 10px; 
+    padding: 10px 20px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#navi > li:not(:first-child) {
+    margin-left: 15px;
+}
+
+#navi a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+#navi li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    list-style-type: none;
+    z-index: 1000;
+}
+
+#navi li:hover > ul {
+    display: flex; 
+    flex-direction: column;
+}
+
+#navi > li:hover {
+    background-color: navy;
+}
+
+#navi > li:hover a,
+#navi > li:hover li a { 
+    color: white; 
+}
+
+#navi li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    list-style-type: none;
+    z-index: 1000;
+}
+
+#navi li > ul li {
+    background-color: lightblue; 
+    border: none;
+    margin: 5px 0; 
+    padding: 5px 10px; 
+}
+
+#navi li > ul li a {
+    color: #333; 
+    font-weight: normal;
+}
+
+#navi li ul li {
+    padding: 5px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 20px auto;
+}
+
+#login {
+    background-color: lightsalmon;
+    padding: 20px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    order: 1; 
+    flex: 0 0 200px;
+    margin-right: 10px;
+}
+
+
+#post {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: calc(100% - 2 * (140px + 20px)); 
+    order: 2; 
+    flex-grow: 1; 
+    margin: 0 10px; 
+}
+
+.card {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(100% - 60px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#ad {
+    display: flex;
+    flex-direction: column;
+    background-color: lightsalmon;
+    padding: 20px;
+    order: 3;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.ad-box {
+    background-color: hsla(24, 96%, 73%, 0.849); 
+    height: 100px; 
+    border: 2px solid #00000049; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+.ad-box:last-child {
+    margin-bottom: 0; 
+}
+
+footer {
+    background-color: lightsalmon;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 10px;
+}
+
+#foot ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#foot li {
+    display: inline;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #login, #post, #ad {
+        width: 90%; 
+        order: 0; 
+        margin-bottom: 10px; 
+    }
+
+    footer {
+        margin-top: 20px; 
+    }
+}
