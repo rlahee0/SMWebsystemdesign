@@ -1,0 +1,51 @@
+<!-- register.html -->
+<!/DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김희영</title>
+</head>
+<body>
+    <header>
+        <h1>동아리 가입 양식</h1>
+    </header>
+    <main>
+    <form action="/action_page.php">
+        <label for="name">이름</label>
+        <input type="name" id=""><br/>
+        <label for="department">학부/학과</label>
+        <input list="department">
+        <datalist id="department">
+            <option value="소프트웨어학부">
+            <option value="컴퓨터과학전공">
+            <option value="데이터사이언스전공">
+            <option value="그 외 학과">
+        </datalist><br/>
+        <label for="whatgrade">학년</label>
+        <input type="radio" id="freshman" name="grade" value="freshman">
+        <label for="freshman">1학년</label>
+        <input type="radio" id="sophomore" name="grade" value="sophomore">
+        <label for="sophomore">2학년</label>
+        <input type="radio" id="junior" name="grade" value="junior">
+        <label for="junior">3학년</label>
+        <input type="radio" id="senior" name="grade" value="senior">
+        <label for="senior">4학년</label><br/>
+        <label for="studentid">학번</label>
+        <input type="search" id="studentid" name="studentid"><br/>
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email"><br/>
+        <label for="phone">전화번호</label>
+        <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br/>
+        <label for="message">가입동기</label>
+        <textarea name="message" rows="5" cols="30">
+        </textarea>
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소하기">
+    </form>
+    </main>
+    <footer>
+        <p>Posted by: Heeyoung Kim <br/> Contact information: rlahee0@sookmyung.ac.kr</p>
+    </footer>
+</body>
+</html>
