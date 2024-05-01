@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2313392 김희영</title>
+</head>
+<body>
+<h1 id="result"></h1>
+
+<script>
+window.onload = function() {
+    getInputAndCalculateBMI();
+};
+
+function getInputAndCalculateBMI() {
+    var name = prompt("이름을 입력하세요:");
+    var age = parseInt(prompt("나이를 입력하세요:"));
+    var height = parseFloat(prompt("키(cm)를 입력하세요:")); // cm단위로 사용자에게 보여줌
+    var weight = parseFloat(prompt("체중(kg)를 입력하세요:"));
+    var bmi = weight / ((height / 100) * (height / 100)); // BMI 계산은 미터단위로 변환하여 계산
+    var healthStatus;
+
+    if (age >= 20 && age < 30) {
+        if (bmi <= 17.9) healthStatus = '저체중';
+        else if (bmi > 17.9 && bmi <= 23) healthStatus = '표준체중';
+        else if (bmi > 23 && bmi <= 30) healthStatus = '과체중';
+        else healthStatus = '비만';
+    } else if (age >= 30 && age < 40) {
+        if (bmi <= 18.4) healthStatus = '저체중';
+        else if (bmi > 18.4 && bmi <= 24) healthStatus = '표준체중';
+        else if (bmi > 24 && bmi <= 30) healthStatus = '과체중';
+        else healthStatus = '비만';
+    } else {
+        healthStatus = '적용 가능한 나이 범위가 아닙니다.';
+    }
+
+    var resultText = '이름 : ' + name + '<br>' +
+                     '나이 : ' + age + '<br>' +
+                     '키 : ' + height + ' cm<br>' +
+                     '체중 : ' + weight + ' kg<br>' +
+                     '당신은 ' + healthStatus + ' (' + bmi + ')입니다.';
+
+    document.getElementById('result').innerHTML = resultText;
+}
+</script>
+</body>
+</html>

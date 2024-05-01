@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2313392 김희영</title>
+    <script>
+        window.onload = function() {
+            var count = parseInt(prompt("카운트다운을 시작할 숫자를 입력하세요:", "10"));
+            
+            if (!isNaN(count)) {
+                document.getElementById("demo").innerHTML = count;
+
+                const interval = setInterval(function() {
+                    count--;
+                    document.getElementById("demo").innerHTML = count;
+                    if (count <= 0) {
+                        clearInterval(interval);
+                        document.getElementById("demo").innerHTML = "타이머 종료";
+                    }
+                }, 1000);
+            } else {
+                document.getElementById("demo").innerHTML = "유효한 숫자를 입력하세요.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="demo">카운트다운이 여기에 표시됩니다.</div>
+</body>
+</html>
