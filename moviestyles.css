@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('/image/movieb.jpg'); /* 배경 이미지 경로 설정 */
+    background-image: url('https://github.com/rlahee0/SMwebsysdesign/raw/main/image/movieb.jpg'); /* 배경 이미지 경로 설정 */
     background-size: cover; /* 이미지를 요소 크기에 맞추어 조정 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-position: center; /* 배경 이미지 중앙 정렬 */
