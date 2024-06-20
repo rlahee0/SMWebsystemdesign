@@ -91,7 +91,7 @@ header h1 {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url('/image/batang.jpg') no-repeat center center;
+    background: url('https://github.com/rlahee0/SMwebsysdesign/raw/main/image/batang.jpg') no-repeat center center;
     background-size: cover;
     animation: slide-up 10s linear infinite;
 }
