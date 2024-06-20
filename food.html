@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 맛집 음식점 소개</title>
+    <link rel="stylesheet" href="foodstyles.css">
+    <link href="https://webfontworld.github.io/naver/MaruBuri.css" rel="stylesheet">
+    <script src="js/food.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>나의 맛집 음식점 소개</h1>
+        <div class="button-container">
+            <button onclick="location.href='cafe.html'" class="sub-button">맛집탐방</button>
+            <div class="dropdown">
+                <button class="main-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <div class="dropdown-content">
+                    <a href="final_project.html">첫 페이지</a>
+                    <a href="main.html">홈</a>
+                    <a href="cafe.html">카페/맛집탐방</a>
+                    <a href="movie.html">영화와 공연</a>
+                    <a href="hanbok.html">한복과 고궁</a>
+                    <a href="museum.html">미술관/박물관</a>
+                    <a href="violin.html">바이올린 연주</a>
+                    <a href="travel.html">여행기록</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="restaurant-box">
+            <div class="restaurant">
+                <div class="photo-description">
+                    <img src="/image/jojo.jpg" alt="맛집 사진 3" class="photo">
+                    <div id="map1" class="map"></div>
+                </div>
+                <div class="description">
+                    <h3>조조칼국수</h3>
+                    <p><strong>위치:</strong> 서울특별시 중구 세종대로11길 27</p>
+                    <p><strong>평점:</strong> ★ 4.5/5</p>
+                    <p><strong>영업시간:</strong> 오전 10시 ~ 오후 9시 반, 라스트오더 오후 9시 평일 4시 ~ 5시 브레이크 타임</p>
+                    <p><strong>화장실 청결도:</strong> 5/5</p>
+                    <p><strong>가격:</strong> 합리적인 가격이 매우 만족스럽다.</p>
+                    <p><strong>설명:</strong> 근처에 자취하는 다른 친구의 추천을 받아서 가게 되었다. 가성비가 좋고 해물파전에 해물이 많아서 많이 찾게 된다. 직원들이 활기찬 에너지로 고객 응대를 하는 것도 마음에 든다. 근처에 콩국수 맛집 진주회관도 있다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="restaurant-box">
+            <div class="restaurant">
+                <div class="photo-description">
+                    <img src="/image/lepul.jpg" alt="맛집 사진 4" class="photo">
+                    <div id="map2" class="map"></div>
+                </div>
+                <div class="description">
+                    <h3>르풀</h3>
+                    <p><strong>위치:</strong> 서울특별시 중구 정동 정동길 33</p>
+                    <p><strong>평점:</strong> ★ 4/5</p>
+                    <p><strong>영업시간:</strong> 오전 10시 ~ 오후 8시</p>
+                    <p><strong>화장실 청결도:</strong> 3/5</p>
+                    <p><strong>가격:</strong> 비싼 편</p>
+                    <p><strong>설명:</strong> 정동길에 있어 식당 주변 분위기가 좋다. 한 끼 식사로 먹기엔 부족하다고 느낄 수 있지만 아침이나 점심으로 추천한다. 날씨가 좋으면 테라스 자리에서 여유를 즐기며 먹을 수 있다. 정동길 주변에는 맛있는 카페도 많다. (라운드엔드, 전광수커피하우스 정동점 등등)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rating-section-box">
+        <div class="rating-section">
+            <form id="ratingForm" class="rating-form">
+                <div class="rating-inputs">
+                    <label for="cafe-select">음식점 선택:</label>
+                    <select id="cafe-select" name="cafe">
+                        <option value="조조칼국수">조조칼국수</option>
+                        <option value="르풀">르풀</option>
+                    </select>
+                </div>
+                <div class="rating-inputs">
+                    <label for="rating">별점 등록:</label>
+                    <input type="radio" name="rating" value="1"> 1
+                    <input type="radio" name="rating" value="2"> 2
+                    <input type="radio" name="rating" value="3"> 3
+                    <input type="radio" name="rating" value="4"> 4
+                    <input type="radio" name="rating" value="5"> 5
+                </div>
+                <div class="comment-input">
+                    <label for="comment">한줄평 등록:</label>
+                    <input type="text" id="comment" name="comment" required>
+                    <button type="submit">등록</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="reviews-section-box">
+        <div class="reviews-section" id="reviews">
+            <!-- 사용자가 남긴 리뷰가 여기에 표시됩니다. -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 김희영, 소프트웨어학부, 학번: 2313392</p>
+        <p>이 웹페이지는 대학 과제용으로 제작되었습니다.</p>
+        <p>문의: rlahee0@sookmyung.ac.kr</p>
+    </footer>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65b7bcd465d7213282768a34d349a03a"></script>
+    <script>
+    function initMap() {
+        var locations = [
+            {title: '조조칼국수', latlng: new kakao.maps.LatLng(37.5620483, 126.9743115)}, // 서울특별시 중구 세종대로11길 27
+            {title: '르풀', latlng: new kakao.maps.LatLng(37.5661946, 126.9721747)}  // 서울특별시 중구 정동 정동길 33
+        ];
+        
+        locations.forEach((location, index) => {
+            var mapContainer = document.getElementById('map' + (index + 1));
+            var mapOption = { 
+                center: location.latlng,
+                level: 3
+            };
+            
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+            var marker = new kakao.maps.Marker({
+                position: location.latlng,
+                map: map
+            });
+            
+            var iwContent = `<div style="padding:5px;">${location.title} <br><a href="https://map.kakao.com/link/map/${location.title},${location.latlng.getLat()},${location.latlng.getLng()}" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/${location.title},${location.latlng.getLat()},${location.latlng.getLng()}" style="color:blue" target="_blank">길찾기</a></div>`;
+            var infowindow = new kakao.maps.InfoWindow({
+                content : iwContent
+            });
+            
+            infowindow.open(map, marker);
+        });
+    }
+    kakao.maps.load(initMap);  // Kakao Maps API가 로드되면 initMap 함수를 호출합니다.
+    </script>
+</body>
+</html>

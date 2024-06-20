@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'MaruBuri';
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Regular.woff2) format('woff2');
+    font-display: swap;
+}
+
+body {
+    font-family: 'MaruBuri', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/image/movieb.jpg'); /* 배경 이미지 경로 설정 */
+    background-size: cover; /* 이미지를 요소 크기에 맞추어 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명 배경 */
+    color: #000;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.main-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main-button:hover {
+    background-color: #555; /* 배경색 변경 */
+    color: #fff; /* 글자색 유지 */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown:hover .main-button {
+    background-color: #555;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.scroll-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+.poster {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.poster-img {
+    width: 200px;
+    height: 300px;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.poster:hover .description {
+    display: block;
+}
+
+.rating-section, .reviews-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* 불투명한 흰색 배경 */
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-inputs, .comment-input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    justify-content: center;
+}
+
+.reviews-section {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* 불투명한 흰색 배경 */
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.review-box .delete-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+footer {
+    background-color: #666666;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.section {
+    border: 2px solid #535353;
+    border-radius: 15px; /* 둥근 테두리 */
+    padding: 20px;
+    margin: 10px 0;
+    width: 90%;
+    max-width: 1300px;
+}
+
+.section.wide {
+    width: 100%; 
+    max-width: 1750px;
+    margin-right: auto;
+}

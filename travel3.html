@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023-2024 여행기록</title>
+    <link rel="stylesheet" href="travelstyles3.css">
+    <link href="https://webfontworld.github.io/naver/MaruBuri.css" rel="stylesheet">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65b7bcd465d7213282768a34d349a03a"></script>
+    <script>
+        function initMap() {
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = { 
+                    center: new kakao.maps.LatLng(35.815538, 127.149595), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                }; 
+
+            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new kakao.maps.LatLng(37.291400, 127.545460); 
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+            // 인포윈도우로 장소에 대한 설명을 표시합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                content: '<div style="width:150px;text-align:center;padding:6px 0;">전주한옥마을-교종다원</div>'
+            });
+            infowindow.open(map, marker); 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>2023-2024 여행기록</h1>
+        <div class="dropdown">
+            <button class="main-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <div class="dropdown-content">
+                <a href="final_project.html">첫 페이지</a>
+                <a href="main.html">홈</a>
+                <a href="cafe.html">카페/맛집탐방</a>
+                <a href="movie.html">영화와 공연</a>
+                <a href="hanbok.html">한복과 고궁</a>
+                <a href="museum.html">미술관/박물관</a>
+                <a href="violin.html">바이올린 연주</a>
+                <a href="travel.html">여행기록</a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-buttons">
+        <button onclick="location.href='travel1.html'">여행 1</button>
+        <button onclick="location.href='travel2.html'">여행 2</button>
+        <button onclick="location.href='travel3.html'">여행 3</button>
+        <button onclick="location.href='travel4.html'">여행 4</button>
+    </nav>
+    <section class="description-section">
+        <h2>가족 전주여행</h2>
+        <p>전주 방문 팁:
+
+            한옥마을: 전주의 대표 관광지인 한옥마을에서는 전통 한옥 체험과 다양한 먹거리를 즐길 수 있습니다. 특히, 콩나물국밥을 맛보세요.
+            경기전: 조선왕조의 역사를 느낄 수 있는 경기전은 한옥마을 근처에 있어 함께 둘러보기 좋습니다.
+            덕진공원: 가족과 함께 산책하기 좋은 곳으로, 연꽃이 피는 여름철에 방문하면 더욱 아름답습니다.</p>
+    </section>
+    <section class="content-section">
+        <article class="left-content">
+            <div class="photo">
+                <h3>사진</h3>
+                <img src="/image/jeon1.jpg" alt="여행 사진">
+            </div>
+        </article>
+        <article class="right-content">
+            <div class="map">
+                <h3>지도 API</h3>
+                <div id="map" style="width:400px;height:300px;"></div>
+            </div>
+        </article>
+    </section>
+    <section class="additional-photo-section">
+        <h2>추가 사진</h2>
+        <img src="/image/jeon2.jpg" alt="추가 사진">
+    </section>
+    <footer>
+        <p>&copy; 2024 김희영, 소프트웨어학부, 학번: 2313392</p>
+        <p>이 웹페이지는 대학 과제용으로 제작되었습니다.</p>
+        <p>문의: rlahee0@sookmyung.ac.kr</p>
+    </footer>
+</body>
+</html>

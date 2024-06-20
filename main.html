@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <link href="https://webfontworld.github.io/naver/MaruBuri.css" rel="stylesheet">
+    <script src="js/scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'MaruBuri', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url('/image/test08.jpg'); /* 배경 이미지 경로 설정 */
+            background-size: cover; /* 이미지를 요소 크기에 맞추어 조정 */
+            background-repeat: no-repeat; /* 이미지 반복 방지 */
+            background-position: center; /* 배경 이미지 중앙 정렬 */
+        }
+        
+        header {
+            background-color: rgba(255, 255, 255, 0.5); /* 반투명 배경 */
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 1em;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5em 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #007BFF;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        main {
+            display: flex;
+            padding: 2em;
+        }
+        
+        .left-column {
+            flex: 3;
+            padding-right: 2em;
+        }
+        
+        .right-column {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .article-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1em;
+        }
+        
+        footer {
+            background-color: #3333338f;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>저의 취미생활을 소개합니다</h1>
+        <nav>
+            <ul>
+                <li><a href="final_project.html">첫 페이지</a></li>
+                <li><a href="cafe.html">카페/맛집탐방</a></li>
+                <li><a href="movie.html">영화와 공연</a></li>
+                <li><a href="hanbok.html">한복과 고궁</a></li>
+                <li><a href="museum.html">미술관/박물관</a></li>
+                <li><a href="violin.html">바이올린 연주</a></li>
+                <li><a href="travel.html">여행기록</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="left-column">
+            <section>
+                <article class="article-box">
+                    <p>2023 – 2024년 대학교입학해서 1,2,학년을 다니면서 자취를 하게 되었는데 그동안 학교 앞과 자취
+                        방 근처(서대문역 근처, 광화문 근처 랑 서울 곳곳 ) 정말 많은 곳을 다니면서 재밌는 시간을 보
+                        냈었다. 그래서 웹페이지에 정리해서 소개하고자 함. </p>
+                </article>
+                <article class="article-box">
+                    <h2>카페/맛집탐방</h2>
+                    <p>내가 자취생활을 시작하면서 자취방 근처 자주 가는 맛있는 카페와 음식점들에 대한 소개가 담긴 페이지. 가게에 대해 별점과 한줄평을 남길 수 있다.</p>
+                </article>
+                <article class="article-box">
+                    <h2>영화와 공연</h2>
+                    <p>2023년-2024년 봤었던 뮤지컬 공연과 영화정보가 담긴 페이지. 주인장의 감상평을 알 수 있다. 영화에 대해 별점과 한줄평을 남길 수 있다.</p>
+                </article>
+                <article class="article-box">
+                    <h2>한복과 고궁</h2>
+                    <p>2023년, 2024년 자취를 궁궐 근처에 하게 되어, 한복을 입으면 무료입장을 할수 있다는 정보를 듣고, 한복에 대해 관심이 커져 대여에 그치지 않고 직접 구매를 해서 입고다닌 경험에 대해 소개하는 페이지. 경복궁 야간개장과 창덕궁 별빛기행에 대한 정보가 소개되어 있다.</p>
+                </article>
+                <article class="article-box">
+                    <h2>미술관/박물관</h2>
+                    <p>2023년-2024년 다녀온 미술관, 박물관 전시에 대해 소개하는 페이지</p>
+                </article>
+                <article class="article-box">
+                    <h2>바이올린 연주</h2>
+                    <p>1학년때 숙명 중앙오케스트라 동아리에 가입하게 되어 2번의 정기연주회와 2번의 작은연주회를 참여하게 된 경험을 소개하는 페이지</p>
+                </article>
+                <article class="article-box">
+                    <h2>여행기록</h2>
+                    <p>2023년-2024년 다녀온 가족여행과 자매여행에 대해 기록하고 소개하는 페이지</p>
+                </article>
+            </section>
+        </div>
+        <div class="right-column">
+            <h2>로그인</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="username">아이디:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">비밀번호:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">로그인</button>
+            </form>
+            <div id="welcomeMessage" style="display:none;">
+                <p>환영합니다, <span id="user"></span>!</p>
+                <button id="logoutButton">로그아웃</button>
+            </div>
+            <h2>회원가입</h2>
+            <form id="registerForm">
+                <div>
+                    <label for="newUsername">새 아이디:</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+                </div>
+                <div>
+                    <label for="newPassword">새 비밀번호:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <button type="submit">회원가입</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 김희영, 소프트웨어학부, 학번: 2313392</p>
+        <p>이 웹페이지는 대학 과제용으로 제작되었습니다.</p>
+        <p>문의: rlahee0@sookmyung.ac.kr</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const logoutButton = document.getElementById('logoutButton');
+            const userSpan = document.getElementById('user');
+            const registerForm = document.getElementById('registerForm');
+
+            // Admin credentials
+            const adminUsername = 'admin';
+            const adminPassword = 'admin123';
+
+            if (localStorage.getItem('username')) {
+                userSpan.textContent = localStorage.getItem('username');
+                loginForm.style.display = 'none';
+                welcomeMessage.style.display = 'block';
+            }
+
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                if (username === adminUsername && password === adminPassword) {
+                    localStorage.setItem('username', username);
+                    userSpan.textContent = username;
+                    loginForm.style.display = 'none';
+                    welcomeMessage.style.display = 'block';
+                } else {
+                    const storedPassword = localStorage.getItem(username);
+
+                    if (storedPassword === password) {
+                        localStorage.setItem('username', username);
+                        userSpan.textContent = username;
+                        loginForm.style.display = 'none';
+                        welcomeMessage.style.display = 'block';
+                    } else {
+                        alert('아이디 또는 비밀번호가 잘못되었습니다.');
+                    }
+                }
+            });
+
+            logoutButton.addEventListener('click', function() {
+                localStorage.removeItem('username');
+                loginForm.style.display = 'block';
+                welcomeMessage.style.display = 'none';
+            });
+
+            registerForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const newUsername = document.getElementById('newUsername').value;
+                const newPassword = document.getElementById('newPassword').value;
+
+                if (localStorage.getItem(newUsername)) {
+                    alert('이미 존재하는 아이디입니다.');
+                } else {
+                    localStorage.setItem(newUsername, newPassword);
+                    alert('회원가입이 완료되었습니다. 이제 로그인하세요.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
