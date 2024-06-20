@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이올린 연주-학교 동아리 소개</title>
+    <link rel="stylesheet" href="violinstyles.css">
+    <link href="https://webfontworld.github.io/naver/MaruBuri.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'MaruBuri', serif;
+            background-image: url('/image/test10.jpg'); /* 배경 이미지 경로 설정 */
+            background-size: cover; /* 이미지를 요소 크기에 맞추어 조정 */
+            background-repeat: no-repeat; /* 이미지 반복 방지 */
+            background-position: center; /* 배경 이미지 중앙 정렬 */
+        }
+        header {
+            width: 100%;
+            max-width: 1870px;
+            display: flex;
+            justify-content: space-between; /* 헤더 요소 사이의 공간을 균등하게 분배 */
+            align-items: center; /* 세로 중앙 정렬 */
+            margin-bottom: 20px;
+        }
+        .header-title {
+            font-size: 38px;
+            font-weight: bold;
+        }
+        .main-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .screen {
+            width: 80%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            background-color: black;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .control-bar {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
+        .control-button {
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        .control-button.active {
+            opacity: 1;
+        }
+        .pause-button {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pause-icon, .play-icon {
+            width: 10px;
+            height: 10px;
+            fill: black;
+        }
+        .main-title, .description-box, .additional-info {
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'MaruBuri', serif;
+        }
+        .main-title {
+            text-align: left; /* 왼쪽 정렬 */
+        }
+        .description-box {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .description-item {
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            height: 400px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            font-family: 'MaruBuri', serif;
+        }
+        .thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, bottom 0.3s ease;
+        }
+        .description-item h3, .description-item p {
+            display: none;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .description-item.show-text h3, .description-item.show-text p {
+            display: block;
+        }
+        p {
+            font-size: 18px; /* 글씨 크기를 줄임 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">바이올린 연주-학교 동아리 소개</div>
+        <div class="dropdown">
+            <button class="main-button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <div class="dropdown-content">
+                <a href="1stp.html">첫 페이지</a>
+                <a href="main.html">홈</a>
+                <a href="cafe.html">카페/맛집탐방</a>
+                <a href="movie.html">영화와 공연</a>
+                <a href="hanbok.html">한복과 고궁</a>
+                <a href="museum.html">미술관/박물관</a>
+                <a href="violin.html">바이올린 연주</a>
+                <a href="travel.html">여행기록</a>
+            </div>
+        </div>
+    </header>
+    <div class="screen">
+        <div class="slides" id="slides">
+            <div class="slide" style="background-image: url('/image/sophiabig.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/sophiaphoto.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/3rdsmallafter.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/yangkkochi.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/30thanni.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/27thnew.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/3rdsmall.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/sophia1.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/sophia3.jpg');"></div>
+            <div class="slide" style="background-image: url('/image/sophia4.jpg');"></div>
+        </div>
+        <div class="control-bar" id="controlBar">
+            <div class="pause-button" id="pauseButton">
+                <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                    <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="additional-info">
+        <p>소피아(S.O.Phia)는 Sookmyung Orchestre Philarmonique des Amateurs의 약자로 30주년 전통을 가진 중앙 아마추어 오케스트라 동아리이다.</p><p> 방학 1-2월, 6-7-8월에 연주회 준비를 해서 3월에는 신입생환영회를, 9월에는 정기연주회를 연다. 연주회는 선택적으로 참여할 수 있으며&nbsp;&nbsp;&nbsp;정기연주회 1번을 참여하면</p><p>준단원에서 단원, 3번을 참여하면 동아리 졸업을 해서 선배객원으로 계속 연주회에 참여할 수 있다. 선배객원은 연주회비를 받지 않는다. &nbsp;&nbsp;&nbsp;그 외에도 5월과 11월 말에 작은 음악회를 하고, 3월, 10월 초에 신입부원을 모집한다.</p>
+    </div>
+
+    <div class="main-title">
+        <h2>내가 참여한 연주회</h2>
+    </div>
+    <div class="description-box">
+        <div class="description-item">
+            <div class="thumbnail" style="background-image: url('/image/30thanni.jpg');"></div>
+            <h3>30주년 특별연주회</h3>
+            <p>소피아가 생기고 나서 30주년이 되어 특별연주회를 준비했다. 대학생이 되어 처음으로 들어온, 클래식 오케스트라 공연연습을 해보게 되었다. 1학년때 들어오고 나서 첫 연주회라 이모랑 사촌언니도 왔었는데 감사하다.</p>
+        </div>
+        <div class="description-item">
+            <div class="thumbnail" style="background-image: url('/image/27thnew.jpg');"></div>
+            <h3>27회 신입생환영회</h3>
+            <p>24년 3월 2일 토 성남아트센터에서 공연함. 개학을 맞이하여 신입생들을 환영한다는 의미로 대학축전서곡, 비제 모음곡2번, 브람스 교향곡 2번을 연주했다. 이번엔 학교에서 좀 거리가 있는 성남에서 연주를 해서 본가와 가까워 고등학교 친구들을 초대했고 친구들이 와줘서 너무 고마웠다. 이번 공연까지 해서 바이올린의 높은 포지션을 연주하는데 도움이 많이 된 것 같다.</p>
+        </div>
+        <div class="description-item">
+            <div class="thumbnail" style="background-image: url('/image/3rdsmall.jpg');"></div>
+            <h3>제3회 작은음악회</h3>
+            <p>24년 5월 28일 화 순헌관 공연 내가 두번째 (1회도 참여)로 참여하는 작은 음악회인데, 우리조는 여인의 향기ost인 por una cabeza을 연주했다. 원래 두곡을 계획했었지만 한곡밖에 연주하지 못하는 등의 어려움이 있었다. 작은음악회를 마무리하게 되어 뿌듯하고 후련하다.</p>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.getElementById('slides');
+        const controlBar = document.getElementById('controlBar');
+        const pauseButton = document.getElementById('pauseButton');
+        const pauseIcon = document.querySelector('.pause-icon');
+        const playIcon = document.querySelector('.play-icon');
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            updateControlButtons(index);
+        }
+
+        function updateControlButtons(index) {
+            const buttons = document.querySelectorAll('.control-button');
+            buttons.forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+            });
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % 10;
+                showSlide(currentIndex);
+            }, 2000);
+        }
+
+        function createControlButtons() {
+            for (let i = 0; i < 10; i++) {
+                const button = document.createElement('div');
+                button.classList.add('control-button');
+                if (i === 0) button.classList.add('active');
+                button.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    currentIndex = i;
+                    showSlide(i);
+                    startSlideshow();
+                });
+                controlBar.insertBefore(button, pauseButton);
+            }
+        }
+
+        pauseButton.addEventListener('click', () => {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+                slideInterval = null;
+                pauseIcon.style.display = 'none';
+                playIcon.style.display = 'block';
+            } else {
+                startSlideshow();
+                pauseIcon.style.display = 'block';
+                playIcon.style.display = 'none';
+            }
+        });
+
+        createControlButtons();
+        startSlideshow();
+
+        document.querySelectorAll('.description-item').forEach(function(item) {
+            item.addEventListener('mouseover', function() {
+                const thumbnail = item.querySelector('.thumbnail');
+                thumbnail.style.transform = 'scale(0.2)';
+                thumbnail.style.bottom = '0';
+                item.classList.add('show-text');
+            });
+            item.addEventListener('mouseout', function() {
+                const thumbnail = item.querySelector('.thumbnail');
+                thumbnail.style.transform = 'scale(1)';
+                thumbnail.style.bottom = 'initial';
+                item.classList.remove('show-text');
+            });
+        });
+    </script>
+</body>
+</html>
